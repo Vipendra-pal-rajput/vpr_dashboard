@@ -1,0 +1,8 @@
+<h2>Welcome to the E-Commerce App</h2>
+<nav>
+<a routerLink="/product-list">Browse Products</a>
+<a *ngIf="!authService.isAdmin()" routerLink="/cart">Go to Cart</a>
+<a routerLink="/login" *ngIf="!authService.isAuthenticated()">Login</a>
+<a *ngIf="authService.isAdmin()" routerLink="/admin-dashboard">Admin Dashboard</a> 
+<a (click)="logout()" *ngIf="authService.isAuthenticated()">Logout</a>
+</nav>

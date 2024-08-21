@@ -1,0 +1,16 @@
+<div class="cart-list">
+  <h2>Cart</h2>
+  <div class="cart-grid">
+    <div *ngFor="let item of cartItems" class="cart-card">
+      <img [src]="item.image" alt="{{item.name}}" class="cart-image">
+      <div class="cart-info">
+        <h3 class="cart-name">{{item.name}}</h3>
+        <p class="cart-description">{{item.description}}</p>
+        <div class="cart-footer">
+          <p class="cart-price">${{item.price}}</p>
+          <button (click)="clearCartById(item)">Remove From Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h2>Admin Dashboard</h2>
+
+<h3>Add New Product</h3>
+<form (ngSubmit)="addProduct()">
+  <input type="text" [(ngModel)]="newProduct.name" placeholder="Product Name" name="name" required>
+  <input type="text" [(ngModel)]="newProduct.description" placeholder="Product Description" name="description" required>
+  <input type="number" [(ngModel)]="newProduct.price" placeholder="Product Price" name="price" required>
+  <button type="submit">Add Product</button>
+</form>
+
+<h3>Existing Products</h3>
+<div *ngFor="let product of products">
+  <input type="text" [(ngModel)]="product.name" name="name">
+  <input type="text" [(ngModel)]="product.description" name="description">
+  <input type="number" [(ngModel)]="product.price" name="price">
+  <button (click)="editProduct(product)">Save Changes</button>
+  <button (click)="deleteProduct(product.id)">Delete</button>
+</div>
